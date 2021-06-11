@@ -7,7 +7,7 @@ jobs:
   build:
     name: Build Web
     env:
-      my_secret: ${{secrets.commit_secret}}
+      my_secret: ${{secrets.commit_secrets}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -26,7 +26,7 @@ jobs:
           git config --global user.name yangsmith
           git status
           # 更改此远程URL，例如查看您的远程URL是 https://github.com/onatcipli/flutter_web.git 然后改成以下内容
-          git remote add origin https://${{secrets.commit_secret}}@github.com/yangsmith/photobooth.git
+          git remote add origin https://${{secrets.commit_secrets}}@github.com/yangsmith/photobooth.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
